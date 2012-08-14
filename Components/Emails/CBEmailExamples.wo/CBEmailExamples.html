@@ -14,7 +14,10 @@
       <br />
       <wo:AjaxSubmitButton updateContainerID="message" value="Send plain text email" action="$sendPlainTextEmail" />
       <wo:AjaxSubmitButton updateContainerID="message" value="Send HTML email" action="$sendHTMLEmail" />
-    </wo:form>
+      <wo:AjaxSubmitButton updateContainerID="message" value="Send HTML email (from component)" action="$sendComponentEmail" />
+      <wo:AjaxSubmitButton updateContainerID="message" value="Send email with attachement" action="$sendAttachementEmail" />
+      <wo:AjaxSubmitButton updateContainerID="message" value="Send email with inline image" action="$sendInlineImagesEmail" />
+	</wo:form>
     <wo:AjaxUpdateContainer id="message"><wo:str value="$message" /></wo:AjaxUpdateContainer>
   </body>
 </html>
