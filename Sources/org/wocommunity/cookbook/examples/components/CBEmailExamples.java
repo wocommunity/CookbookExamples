@@ -12,6 +12,7 @@ public class CBEmailExamples extends ERXComponent {
 
   private String _emailFrom;
   private String _emailTo;
+  private String _message;
 
   public CBEmailExamples(WOContext context) {
     super(context);
@@ -32,6 +33,14 @@ public class CBEmailExamples extends ERXComponent {
   public String emailTo() {
     return this._emailTo;
   }
+  
+  public void setMessage(String message) {
+    this._message = message;
+  }
+
+  public String message() {
+    return this._message;
+  }
 
   public WOActionResults sendPlainTextEmail() {
     ERMailDeliveryPlainText mail = new ERMailDeliveryPlainText();
@@ -45,8 +54,10 @@ public class CBEmailExamples extends ERXComponent {
       mail.setTextContent("Content of the email");
 
       mail.sendMail ();
+      
+      _message = "Success";
     } catch (Exception e) {
-      // do something ...
+      _message = e.getMessage();
     }
     return null;
   }
@@ -64,8 +75,10 @@ public class CBEmailExamples extends ERXComponent {
       mail.setHiddenPlainTextContent("Content of the email");
 
       mail.sendMail ();
+
+      _message = "Success";
     } catch (Exception e) {
-      // do something ...
+      _message = e.getMessage();
     }
     return null;
   }

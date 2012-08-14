@@ -12,8 +12,9 @@
       To: 
       <wo:textfield value="$emailTo" />
       <br />
-      <wo:AjaxSubmitButton value="Send plain text email" action="$sendPlainTextEmail" />
-      <wo:AjaxSubmitButton value="Send HTML email" action="$sendHTMLEmail" />
+      <wo:AjaxSubmitButton updateContainerID="message" value="Send plain text email" action="$sendPlainTextEmail" />
+      <wo:AjaxSubmitButton updateContainerID="message" value="Send HTML email" action="$sendHTMLEmail" />
     </wo:form>
+    <wo:AjaxUpdateContainer id="message"><wo:str value="$message" /></wo:AjaxUpdateContainer>
   </body>
 </html>
