@@ -17,6 +17,7 @@
       <wo:AjaxSubmitButton updateContainerID="message" value="Send HTML email (from component)" action="$sendComponentEmail" />
       <wo:AjaxSubmitButton updateContainerID="message" value="Send email with attachement" action="$sendAttachementEmail" />
       <wo:AjaxSubmitButton updateContainerID="message" value="Send email with inline image" action="$sendInlineImagesEmail" />
+      <wo:AjaxSubmitButton updateContainerID="message" value="Validate From email address with ERXEmailValidator" action="$validateEmails" />
 	</wo:form>
     <wo:AjaxUpdateContainer id="message"><wo:str value="$message" /></wo:AjaxUpdateContainer>
   </body>

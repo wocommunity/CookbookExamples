@@ -16,9 +16,9 @@ import com.sun.mail.dsn.MultipartReport;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.foundation.NSArray;
-import com.webobjects.foundation.NSLog;
 
 import er.extensions.components.ERXComponent;
+import er.extensions.net.ERXEmailValidator;
 import er.javamail.ERIMAP;
 import er.javamail.ERJavaMail;
 import er.javamail.ERMailAttachment;
@@ -229,6 +229,16 @@ public class CBEmailExamples extends ERXComponent {
     }
     catch (IOException e) {
       e.printStackTrace();
+    }
+    return null;
+  }
+  
+  public WOActionResults validateEmails() {
+    ERXEmailValidator validator = new ERXEmailValidator(true, true);
+    if (validator.isValidEmailAddress(_emailFrom, 100, false)) {
+      _message = "Valid";
+    } else {
+      _message = "Invalid";
     }
     return null;
   }
